@@ -1,0 +1,46 @@
+@import "globals/variables";
+
+.containerFluid {
+  &.bgGreen {
+    color: #f8f8f8;
+    background: $green800;
+    background: linear-gradient(180deg, $green700 0%, $green800 65%);
+    width: 100%;
+  }
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+
+  &.padding {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+
+  @media (min-width: 1400px) {
+    max-width: 1320px;
+  }
+}

@@ -1,0 +1,64 @@
+@import 'globals/variables';
+
+.openingTimesSection {
+  width: 100%;
+}
+
+.contentContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.2rem;
+
+  p {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.highlighted p {
+  font-size: 2rem;
+  color: $yellow700;
+
+  &:first-child {
+    margin-bottom: 0.5rem;
+  }
+
+  &:last-child {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+.contactOptions {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.contactOption {
+  height: 40px;
+  margin: 0 5px;
+  
+  button,
+  a {
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-size: 1rem;
+    justify-content: center;
+    padding: 0 24px;
+    height: 100%;
+    text-decoration: none;
+  }
+}
+
+.contactOption:first-child {
+  background-color: #333;
+}
+
+.contactOption:last-child {
+  background-color: #4285f4;
+}

@@ -1,0 +1,14 @@
+.grid {
+  display: grid;
+  gap: 90px;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 100px;
+}
+
+.boxImage {
+  position: relative;
+  
+  img {
+    object-fit: cover;
+  }
+}

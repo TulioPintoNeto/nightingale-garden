@@ -1,10 +1,9 @@
+'use client';
 import Head from 'next/head';
-import { HomeContent } from '../components/home/HomeContent';
-// import styles from '../styles/Home.module.css';
+import { HomeContent } from '../content/home/HomeContent';
 
 export default function Home() {
   return (
-    // <div className={styles.container}>
     <div>
       <Head>
         <title>Nightingale Garden</title>

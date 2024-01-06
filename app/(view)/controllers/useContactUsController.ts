@@ -1,10 +1,9 @@
 import { inputValidations } from 'globals/view/inputValidations';
 import { useInput } from 'globals/view/useInput';
-import { useState } from 'react';
 
 const useContactUsController = () => {
     const textValidator = (msg: string) => (name: string) => {
-      if (inputValidations.minLength(name)) {
+      if (!inputValidations.minLength(name)) {
         return msg;
       }
       return null;

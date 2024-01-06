@@ -9,11 +9,10 @@ export const POST = async (request: Request) => {
     if (isPayloadValid(payload)) {
       const { name, email, message } = payload;
 
-      console.log(payload);
-      // await sendEmail({
-      //   subject: `Website - Message from ${name} (${email})`,
-      //   message,
-      // });
+      await sendEmail({
+        subject: `Website - Message from ${name} (${email})`,
+        message,
+      });
     }
 
     return new Response(null, { status: 204 });

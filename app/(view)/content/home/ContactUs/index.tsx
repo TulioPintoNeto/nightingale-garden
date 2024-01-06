@@ -5,6 +5,8 @@ import { Button } from '(view)/components/Button';
 import { Title } from '(view)/components/Title';
 import { Container } from '(view)/components/Container';
 import useContactUsController from '(view)/controllers/useContactUsController';
+import { email } from 'globals/constants';
+import { FeedbackMessage } from '(view)/components/FeedbackMessage';
 
 export function ContactUs() {
   const c = useContactUsController();
@@ -46,6 +48,17 @@ export function ContactUs() {
           />
           <Button loading={c.loading} onClick={c.onSubmit} text="Submit" />
         </form>
+        <FeedbackMessage show={c.status === true} type="success">
+          <div aria-live="polite">We received your message, thanks!</div>
+        </FeedbackMessage>
+        <FeedbackMessage show={c.status === false} type="failure">
+          <div role="alert" aria-live="assertive">
+            Something went wrong.
+            <br />
+            If the error persists please try to send your message directly to
+            our email: {email}. We are sorry for the inconvenience.
+          </div>
+        </FeedbackMessage>
       </section>
     </Container>
   );

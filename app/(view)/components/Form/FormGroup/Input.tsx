@@ -12,13 +12,10 @@ type InputProps = {
 
 type TextAreaProps = Omit<InputProps, 'type'>;
 
-function TextAreaInput({
-  id,
-  inputControls,
-  placeholder,
-}: TextAreaProps) {
+function TextAreaInput({ id, inputControls, placeholder }: TextAreaProps) {
   return (
     <textarea
+      aria-invalid={Boolean(inputControls.error)}
       aria-describedby={`${id}-msg`}
       className={CN({ [styles.error]: Boolean(inputControls.error) })}
       id={id}
@@ -31,12 +28,7 @@ function TextAreaInput({
   );
 }
 
-export function Input({
-  type,
-  id,
-  inputControls,
-  placeholder,
-}: InputProps) {
+export function Input({ type, id, inputControls, placeholder }: InputProps) {
   if (type === 'textarea') {
     return (
       <TextAreaInput
@@ -49,6 +41,7 @@ export function Input({
 
   return (
     <input
+      aria-invalid={Boolean(inputControls.error)}
       aria-describedby={`${id}-msg`}
       className={CN({ [styles.error]: Boolean(inputControls.error) })}
       id={id}

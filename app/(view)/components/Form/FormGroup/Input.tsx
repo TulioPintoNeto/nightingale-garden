@@ -17,6 +17,7 @@ function TextAreaInput({ id, inputControls, placeholder }: TextAreaProps) {
     <textarea
       className={CN({ [styles.error]: Boolean(inputControls.error) })}
       id={id}
+      onBlur={() => inputControls.startValidation()}
       onChange={(e) => inputControls.onChange(e.target.value)}
       placeholder={placeholder}
       rows={8}
@@ -41,6 +42,7 @@ export function Input({ type, id, inputControls, placeholder }: InputProps) {
       className={CN({ [styles.error]: Boolean(inputControls.error) })}
       id={id}
       placeholder={placeholder}
+      onBlur={() => inputControls.startValidation()}
       onChange={(e) => inputControls.onChange(e.target.value)}
       type={type}
       value={inputControls.value}

@@ -44,7 +44,7 @@ export function ContactUs() {
             }}
             label="Message*"
           />
-          <Button text="Submit" onClick={c.onSubmit} />
+          <Button loading={c.loading} onClick={c.onSubmit} text="Submit" />
         </form>
       </section>
     </Container>

@@ -1,9 +1,30 @@
 .formGroup {
-  label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 
-  }
+    label {
+        margin-bottom: 8px;
+        text-align: left;
+    }
 
-  input {
+    input, textarea {
+        border: 1px solid gray;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 16px;
+        margin-bottom: 30px;
+        padding: 10px;
+        width: 100%;
 
-  }
+        &:focus {
+            border-color: blue;
+            box-shadow: 0 0 5px rgba(gray, 0.5);
+            outline: none;
+        }
+    }
+
+    textarea {
+      resize:none;
+    }
 }

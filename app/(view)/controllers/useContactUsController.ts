@@ -11,10 +11,6 @@ const useContactUsController = () => {
     };
 
     const emailValidator = (email: string) => {
-      if (email === '') {
-        return 'The email is required';
-      }
-
       if (!inputValidations.email(email)) {
         return 'The email is not valid';
       }

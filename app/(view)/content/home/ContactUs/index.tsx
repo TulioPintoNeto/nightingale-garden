@@ -4,32 +4,39 @@ import { FormGroup } from '(view)/components/Form/FormGroup';
 import { Button } from '(view)/components/Button';
 import { Title } from '(view)/components/Title';
 import { Container } from '(view)/components/Container';
+import useContactUsController from '(view)/controllers/useContactUsController';
 
 export function ContactUs() {
+    const c = useContactUsController();
+
     return (
         <Container padding>
             <section id="contact" className={styles.section}>
-                <Title>Contact Section</Title>
-                <p>This is the contact section content.</p>
+                <Title>Contact Us</Title>
 
                 <form>
-                    <FormGroup
-                        id="exampleInputEmail1"
-                        label="Email address"
-                        placeholder="Enter email"
-                        type="email"
-                    />
-                    <FormGroup
-                        id="name"
-                        label="Name"
-                        placeholder="Enter name"
-                        type="text"
-                    />
+                    <div className={styles.row}>
+                        <FormGroup
+                            id="name"
+                            inputControls={c.nameInput}
+                            label="Name*"
+                            placeholder="Enter name"
+                            type="text"
+                        />
+                        <FormGroup
+                            id="exampleInputEmail1"
+                            inputControls={c.emailInput}
+                            label="Email address"
+                            placeholder="Please inform an email if you want a reply"
+                            type="email"
+                        />
+                    </div>
                     <FormGroup
                         id="message"
-                        label="Message"
+                        inputControls={c.messageInput}
+                        label="Message*"
                         placeholder="What do you want to tell us?"
-                        type="text"
+                        type="textarea"
                     />
                     <Button text="Submit" />
                 </form>

@@ -48,10 +48,10 @@ export function ContactUs() {
           />
           <Button loading={c.loading} onClick={c.onSubmit} text="Submit" />
         </form>
-        <FeedbackMessage show={c.status === true} type="success">
+        <FeedbackMessage onClose={c.resetSuccess} show={c.success} type="success">
           <div aria-live="polite">We received your message, thanks!</div>
         </FeedbackMessage>
-        <FeedbackMessage show={c.status === false} type="failure">
+        <FeedbackMessage onClose={c.resetFailure} show={c.failure} type="failure">
           <div role="alert" aria-live="assertive">
             Something went wrong.
             <br />

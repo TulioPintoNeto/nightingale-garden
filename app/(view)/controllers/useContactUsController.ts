@@ -28,7 +28,8 @@ const useContactUsController = () => {
   const emailInput = useInput(emailValidator);
   const messageInput = useInput(textValidator('The message is required'));
   const [loading, setLoading] = useState<boolean>(false);
-  const [status, setStatus] = useState<boolean | null>(null);
+  const [success, setSuccess] = useState<boolean>(false);
+  const [failure, setFailure] = useState<boolean>(false);
 
   const formHasError = Boolean(
     nameInput.validation(nameInput.value) ||
@@ -42,6 +43,13 @@ const useContactUsController = () => {
     messageInput.reset();
   };
 
+  const resetSuccess = () => setSuccess(false);
+  const resetFailure = () => setFailure(false);
+  const resetStatus = () => {
+    resetSuccess();
+    resetFailure();
+  };
+
   const startValidateForm = () => {
     nameInput.startValidation();
     emailInput.startValidation();
@@ -50,7 +58,7 @@ const useContactUsController = () => {
 
   const onSubmit = async () => {
     setLoading(true);
-    setStatus(null);
+    resetStatus();
     startValidateForm();
     if (formHasError) {
       return;
@@ -64,9 +72,9 @@ const useContactUsController = () => {
       });
 
       reset();
-      setStatus(true);
+      setSuccess(true);
     } catch {
-      setStatus(false);
+      setFailure(true);
     } finally {
       setLoading(false);
     }
@@ -75,11 +83,14 @@ const useContactUsController = () => {
   return {
     nameInput,
     emailInput,
+    failure,
     loading,
     messageInput,
     onSubmit,
     reset,
-    status,
+    resetFailure,
+    resetSuccess,
+    success,
   };
 };
 

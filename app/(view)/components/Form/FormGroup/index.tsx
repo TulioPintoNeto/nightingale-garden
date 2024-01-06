@@ -12,7 +12,11 @@ export function FormGroup({ inputProps, label }: Props) {
     <div className={styles.formGroup}>
       <label htmlFor={inputProps.id}>{label}</label>
       <Input {...inputProps} />
-      <div className={styles.errorMsgBox}><span className={styles.errorMsg}>{inputProps.inputControls.error}</span></div>
+      <div className={styles.errorMsgBox}>
+        <span className={styles.errorMsg} id={`${inputProps.id}-msg`}>
+          {inputProps.inputControls.error}
+        </span>
+      </div>
     </div>
   );
 }

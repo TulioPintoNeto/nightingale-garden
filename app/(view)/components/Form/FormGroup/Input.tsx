@@ -4,17 +4,22 @@ import { useInput } from 'globals/view/useInput';
 import CN from 'classnames';
 
 type InputProps = {
-  type: string;
   id: string;
-  placeholder: string;
   inputControls: ReturnType<typeof useInput>;
+  placeholder: string;
+  type: string;
 };
 
 type TextAreaProps = Omit<InputProps, 'type'>;
 
-function TextAreaInput({ id, inputControls, placeholder }: TextAreaProps) {
+function TextAreaInput({
+  id,
+  inputControls,
+  placeholder,
+}: TextAreaProps) {
   return (
     <textarea
+      aria-describedby={`${id}-msg`}
       className={CN({ [styles.error]: Boolean(inputControls.error) })}
       id={id}
       onBlur={() => inputControls.startValidation()}
@@ -26,7 +31,12 @@ function TextAreaInput({ id, inputControls, placeholder }: TextAreaProps) {
   );
 }
 
-export function Input({ type, id, inputControls, placeholder }: InputProps) {
+export function Input({
+  type,
+  id,
+  inputControls,
+  placeholder,
+}: InputProps) {
   if (type === 'textarea') {
     return (
       <TextAreaInput
@@ -39,6 +49,7 @@ export function Input({ type, id, inputControls, placeholder }: InputProps) {
 
   return (
     <input
+      aria-describedby={`${id}-msg`}
       className={CN({ [styles.error]: Boolean(inputControls.error) })}
       id={id}
       placeholder={placeholder}

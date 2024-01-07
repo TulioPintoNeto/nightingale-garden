@@ -1,5 +1,13 @@
+@import 'globals/styles/breakpoints';
+
 .row {
   display: grid;
   column-gap: 20px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  @include md {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
 }

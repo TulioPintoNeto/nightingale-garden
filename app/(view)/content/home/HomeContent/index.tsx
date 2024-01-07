@@ -7,21 +7,12 @@ import { About } from '../About';
 import { ContactUs } from '../ContactUs';
 import { FindUs } from '../FindUs';
 import { HowToVolunteer } from '../HowToVolunteer';
+import { Menu } from '../Menu';
 
 export const HomeContent = () => {
   return (
     <div>
-      <nav className={styles.navbar}>
-        <Container>
-          <div>
-            <img src="/assets/logo.png" alt="Logo" className={styles.logo} />
-          </div>
-          <div className={styles.menu}>
-            <Link href="#about">About</Link>
-            <Link href="#contact">Contact</Link>
-          </div>
-        </Container>
-      </nav>
+      <Menu />
 
       <section className={styles.mainSection}>
         <h1>Nightingale Garden</h1>

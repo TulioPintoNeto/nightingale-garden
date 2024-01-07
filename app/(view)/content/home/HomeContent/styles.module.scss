@@ -1,4 +1,4 @@
-@import "globals/mixins";
+@import 'globals/mixins';
 
 .mainSection {
   align-items: center;
@@ -9,7 +9,7 @@
   justify-content: center;
   text-align: center;
 
-  @include backgroundImage("/assets/background-image.jpg");
+  @include backgroundImage('/assets/background-image.jpg');
 
   h1 {
     font-size: 3rem;
@@ -18,28 +18,5 @@
 
   p {
     font-size: 1.5rem;
-  }
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #333; // Dark background color
-  color: #fff; // Text color
-}
-
-.logo {
-  width: 100px;
-}
-
-.menu {
-  display: flex;
-  gap: 1rem;
-
-  a {
-    color: #fff; // Text color
-    text-decoration: none;
   }
 }

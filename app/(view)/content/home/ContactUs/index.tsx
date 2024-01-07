@@ -6,12 +6,16 @@ import useContactUsController from '(view)/controllers/useContactUsController';
 import { email } from 'globals/constants';
 import { FeedbackMessage } from '(view)/components/FeedbackMessage';
 import { Section } from '(view)/components/Section';
+import { homeIdRef } from '../constants';
 
 export function ContactUs() {
   const c = useContactUsController();
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText('gardenatnightingale@gmail.com');
+  };
 
   return (
-    <Section id="contact" title="Contact Us">
+    <Section id={homeIdRef.contactUs} title="Contact Us">
       <form>
         <div className={styles.row}>
           <FormGroup

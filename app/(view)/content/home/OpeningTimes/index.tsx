@@ -1,18 +1,20 @@
-import React from "react";
-import styles from "./styles.module.scss";
-import { Container } from "(view)/components/Container";
-import { Title } from "(view)/components/Title";
+import React from 'react';
+import styles from './styles.module.scss';
+import { Container } from '(view)/components/Container';
+import { Title } from '(view)/components/Title';
+import { homeIdRef } from '../constants';
 
 interface Props {}
 
 export function OpeningTimes({}: Props) {
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText("gardenatnightingale@gmail.com");
-  };
+  
 
   return (
     <Container padding>
-      <section id="opening-times" className={styles.openingTimesSection}>
+      <section
+        id={homeIdRef.openingTimes}
+        className={styles.openingTimesSection}
+      >
         <div className={styles.contentContainer}>
           <Title>Opening Times</Title>
           <p>

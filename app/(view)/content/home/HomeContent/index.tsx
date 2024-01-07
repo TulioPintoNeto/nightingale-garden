@@ -5,6 +5,7 @@ import { Container } from '../../../components/Container';
 import { OpeningTimes } from '../OpeningTimes';
 import { About } from '../About';
 import { ContactUs } from '../ContactUs';
+import { FindUs } from '../FindUs';
 
 export const HomeContent = () => {
     return (
@@ -32,6 +33,7 @@ export const HomeContent = () => {
 
             <OpeningTimes />
             <About />
+            <FindUs />
             <ContactUs />
         </div>
     );

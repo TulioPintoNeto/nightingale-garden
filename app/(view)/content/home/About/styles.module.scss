@@ -6,7 +6,7 @@
   grid-template-columns: 1fr;
   text-align: left;
 
-  @include sm {
+  @include md {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -19,7 +19,7 @@
     object-fit: cover;
   }
 
-  @include sm {
+  @include md {
     display: inline;
   }
 }

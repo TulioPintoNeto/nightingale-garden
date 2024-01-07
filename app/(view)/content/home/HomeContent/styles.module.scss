@@ -1,28 +1,15 @@
+@import "globals/mixins";
 
 .mainSection {
-  position: relative;
-  height: 60vh;
-  background: url("/assets/background-image.jpg") no-repeat center center/cover;
-  color: #fff;
+  align-items: center;
+  background: url() no-repeat center center/cover;
   display: flex;
   flex-direction: column;
+  height: 60vh;
   justify-content: center;
-  align-items: center;
   text-align: center;
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value for transparency */
-  }
-
-  & > * {
-    z-index: 2;
-  }
+  @include backgroundImage("/assets/background-image.jpg");
 
   h1 {
     font-size: 3rem;

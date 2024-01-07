@@ -1,4 +1,5 @@
 @import "globals/variables";
+@import "globals/mixins";
 
 .containerFluid {
   &.bgGreen {
@@ -6,6 +7,10 @@
     background: $green800;
     background: linear-gradient(180deg, $green700 0%, $green800 65%);
     width: 100%;
+  }
+
+  &.bgImage {
+    @include backgroundImage("/assets/background-find-us.jpg");
   }
 }
 

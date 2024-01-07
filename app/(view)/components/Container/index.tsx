@@ -16,6 +16,7 @@ export function Container({
     <div
       className={CN(styles.containerFluid, {
         [styles.bgGreen]: background === "green",
+        [styles.bgImage]: background === "image",
       })}
     >
       <div

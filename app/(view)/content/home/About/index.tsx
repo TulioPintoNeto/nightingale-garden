@@ -1,26 +1,22 @@
-import React from "react";
-import styles from "./styles.module.scss";
-import { Container } from "(view)/components/Container";
-import { Title } from "(view)/components/Title";
-import { AboutText } from "./AboutText";
-import Image from "next/image";
+import React from 'react';
+import styles from './styles.module.scss';
+import { AboutText } from './AboutText';
+import Image from 'next/image';
+import { Section } from '(view)/components/Section';
 
 export function About() {
   return (
-    <Container backgroundColor="green" padding>
-      <section id="about">
-        <Title>About</Title>
-        <div className={styles.grid}>
-          <AboutText />
-          <div className={styles.boxImage}>
-            <Image
-              src="/assets/seat-image.jpg"
-              alt="The image contains a bank and flowers"
-              fill
-            />
-          </div>
+    <Section id="about" title="About">
+      <div className={styles.grid}>
+        <AboutText />
+        <div className={styles.boxImage}>
+          <Image
+            src="/assets/seat-image.jpg"
+            alt="The image contains a bank and flowers"
+            fill
+          />
         </div>
-      </section>
-    </Container>
+      </div>
+    </Section>
   );
 }

@@ -6,35 +6,33 @@ import { OpeningTimes } from '../OpeningTimes';
 import { About } from '../About';
 import { ContactUs } from '../ContactUs';
 import { FindUs } from '../FindUs';
+import { HowToVolunteer } from '../HowToVolunteer';
 
 export const HomeContent = () => {
-    return (
-        <div>
-            <nav className={styles.navbar}>
-                <Container>
-                    <div>
-                        <img
-                            src="/assets/logo.png"
-                            alt="Logo"
-                            className={styles.logo}
-                        />
-                    </div>
-                    <div className={styles.menu}>
-                        <Link href="#about">About</Link>
-                        <Link href="#contact">Contact</Link>
-                    </div>
-                </Container>
-            </nav>
+  return (
+    <div>
+      <nav className={styles.navbar}>
+        <Container>
+          <div>
+            <img src="/assets/logo.png" alt="Logo" className={styles.logo} />
+          </div>
+          <div className={styles.menu}>
+            <Link href="#about">About</Link>
+            <Link href="#contact">Contact</Link>
+          </div>
+        </Container>
+      </nav>
 
-            <section className={styles.mainSection}>
-                <h1>Nightingale Garden</h1>
-                <p>For everyone to enjoy</p>
-            </section>
+      <section className={styles.mainSection}>
+        <h1>Nightingale Garden</h1>
+        <p>For everyone to enjoy</p>
+      </section>
 
-            <OpeningTimes />
-            <About />
-            <FindUs />
-            <ContactUs />
-        </div>
-    );
+      <OpeningTimes />
+      <HowToVolunteer />
+      <About />
+      <FindUs />
+      <ContactUs />
+    </div>
+  );
 };

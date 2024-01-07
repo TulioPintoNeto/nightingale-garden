@@ -1,5 +1,7 @@
+@import "globals/styles/variables";
+
 .row {
-  background-color: #333;
+  background-color: $darkGray;
   color: #fff;
   padding: 1rem 0;
 }

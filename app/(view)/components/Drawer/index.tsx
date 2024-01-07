@@ -1,33 +1,34 @@
-import { createContext, useContext, useState, PropsWithChildren } from 'react';
+import { useState, ComponentProps } from 'react';
 import ReactModernDrawer from 'react-modern-drawer';
 import { DrawerIcon } from './DrawerIcon';
 import styles from './styles.module.scss';
 import 'react-modern-drawer/dist/index.css';
+import { DrawerLink } from './DrawerLink';
 
-const DrawerContext = createContext<{ closeDrawer: Function }>({
-  closeDrawer: () => {},
-});
+type DrawerLinkProps = ComponentProps<typeof DrawerLink>;
 
-export const useDrawer = () => useContext(DrawerContext);
+type Props = {
+  links: Omit<DrawerLinkProps, 'onClick'>[];
+};
 
-type Props = PropsWithChildren;
-
-export const Drawer = ({ children }: Props) => {
+export const Drawer = ({ links }: Props) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const closeDrawer = () => setOpen(false);
 
-  const toggleDrawer = () => setOpen((ps) => !ps);
+  const openDrawer = () => setOpen(true);
 
   return (
     <>
-      <button className={styles.button} onClick={toggleDrawer}>
+      <button className={styles.button} onClick={openDrawer}>
         <DrawerIcon />
       </button>
       <ReactModernDrawer open={open} direction={'right'} onClose={closeDrawer}>
-        <DrawerContext.Provider value={{ closeDrawer }}>
-          {children}
-        </DrawerContext.Provider>
+        <nav className={styles.drawer}>
+          {links.map((linkProps) => (
+            <DrawerLink {...linkProps} onClick={closeDrawer} />
+          ))}
+        </nav>
       </ReactModernDrawer>
     </>
   );

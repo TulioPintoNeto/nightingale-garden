@@ -1,4 +1,5 @@
 @import "globals/styles/breakpoints";
+@import "globals/styles/variables";
 
 .button {
   background: none;
@@ -6,5 +7,21 @@
 
   @include md {
     display: none;
+  }
+}
+
+.drawer {
+  background: $darkGray;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  padding: 16px 0;
+  
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
   }
 }

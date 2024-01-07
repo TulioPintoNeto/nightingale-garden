@@ -1,0 +1,15 @@
+.footer {
+  font-size: 0.75rem;
+  text-align: center;
+  color: gray;
+  
+  a {
+    color: gray;
+    text-decoration: none;
+    transition: all 0.3s;
+
+    &:hover {
+      color: lightgray;
+    }
+  }
+}

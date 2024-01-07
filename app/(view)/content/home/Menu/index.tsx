@@ -3,12 +3,13 @@ import styles from './styles.module.scss';
 import { Container } from '(view)/components/Container';
 import Link from 'next/link';
 import { homeIdRef } from '../constants';
+import { BlackRow } from '(view)/components/BlackRow';
 
 export function Menu() {
   return (
-    <nav className={styles.navbar}>
+    <BlackRow>
       <Container>
-        <div className={styles.row}>
+        <nav className={styles.navbar}>
           <div>
             <img src="/assets/logo.png" alt="Logo" className={styles.logo} />
           </div>
@@ -19,8 +20,8 @@ export function Menu() {
             <Link href={`#${homeIdRef.findUs}`}>Find Us</Link>
             <Link href={`#${homeIdRef.contactUs}`}>Contact</Link>
           </div>
-        </div>
+        </nav>
       </Container>
-    </nav>
+    </BlackRow>
   );
 }

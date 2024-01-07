@@ -8,6 +8,7 @@ import { ContactUs } from '../ContactUs';
 import { FindUs } from '../FindUs';
 import { HowToVolunteer } from '../HowToVolunteer';
 import { Menu } from '../Menu';
+import { Footer } from '../Footer';
 
 export const HomeContent = () => {
   return (
@@ -24,6 +25,7 @@ export const HomeContent = () => {
       <About />
       <FindUs />
       <ContactUs />
+      <Footer />
     </div>
   );
 };

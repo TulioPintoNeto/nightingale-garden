@@ -4,23 +4,34 @@ import { Container } from '(view)/components/Container';
 import Link from 'next/link';
 import { homeIdRef } from '../constants';
 import { BlackRow } from '(view)/components/BlackRow';
+import { Drawer } from '(view)/components/Drawer';
 
 export function Menu() {
   return (
     <BlackRow>
       <Container>
-        <nav className={styles.navbar}>
+        <div className={styles.navbar}>
           <div>
             <img src="/assets/logo.png" alt="Logo" className={styles.logo} />
           </div>
-          <div className={styles.menu}>
+          <div>
+            <nav className={styles.menu}>
+              <Link href={`#${homeIdRef.openingTimes}`}>Opening Times</Link>
+              <Link href={`#${homeIdRef.howToVolunteer}`}>Voluunter</Link>
+              <Link href={`#${homeIdRef.about}`}>About</Link>
+              <Link href={`#${homeIdRef.findUs}`}>Find Us</Link>
+              <Link href={`#${homeIdRef.contactUs}`}>Contact</Link>
+            </nav>
+            <Drawer />
+            {/* <nav className={styles.menu}>
             <Link href={`#${homeIdRef.openingTimes}`}>Opening Times</Link>
             <Link href={`#${homeIdRef.howToVolunteer}`}>Voluunter</Link>
             <Link href={`#${homeIdRef.about}`}>About</Link>
             <Link href={`#${homeIdRef.findUs}`}>Find Us</Link>
             <Link href={`#${homeIdRef.contactUs}`}>Contact</Link>
+          </nav> */}
           </div>
-        </nav>
+        </div>
       </Container>
     </BlackRow>
   );

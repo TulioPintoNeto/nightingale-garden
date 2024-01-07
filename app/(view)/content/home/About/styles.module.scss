@@ -1,14 +1,25 @@
+@import "globals/styles/breakpoints";
+
 .grid {
   display: grid;
   gap: 90px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   text-align: left;
+
+  @include sm {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .boxImage {
+  display: none;
   position: relative;
   
   img {
     object-fit: cover;
+  }
+
+  @include sm {
+    display: inline;
   }
 }

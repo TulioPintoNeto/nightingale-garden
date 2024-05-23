@@ -8,7 +8,7 @@ import { Drawer } from '(view)/components/Drawer';
 
 const links = [
   { href: `#${homeIdRef.openingTimes}`, text: 'Opening Times' },
-  { href: `#${homeIdRef.howToVolunteer}`, text: 'Voluunter' },
+  { href: `#${homeIdRef.howToVolunteer}`, text: 'Volunter' },
   { href: `#${homeIdRef.about}`, text: 'About' },
   { href: `#${homeIdRef.findUs}`, text: 'Find Us' },
   { href: `#${homeIdRef.contactUs}`, text: 'Contact' },

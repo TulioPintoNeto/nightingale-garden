@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export function AboutText() {
   return (
@@ -21,7 +21,7 @@ export function AboutText() {
 
       <p>
         In May 2018, we started a constituted group (with its own bank account),
-        Nightingale Gardeners.
+        Nightingale Community Gardeners.
       </p>
     </div>
   );

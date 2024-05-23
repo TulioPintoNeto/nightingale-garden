@@ -1,7 +1,6 @@
+'use client';
 import React from 'react';
-import Link from 'next/link';
 import styles from './styles.module.scss';
-import { Container } from '../../../components/Container';
 import { OpeningTimes } from '../OpeningTimes';
 import { About } from '../About';
 import { ContactUs } from '../ContactUs';
@@ -16,7 +15,7 @@ export const HomeContent = () => {
       <Menu />
 
       <section className={styles.mainSection}>
-        <h1>Nightingale Garden</h1>
+        <h1>Nightingale Community Garden</h1>
         <p>For everyone to enjoy</p>
       </section>
 
